@@ -27,7 +27,7 @@ const ThreadContainer = () => {
     }, []);
 
     const selectedThread = (thread) => {
-        setViewThread(thread)
+        setViewThread(thread);
     };
 
     const handleNewThreadForm = () => {
@@ -37,13 +37,13 @@ const ThreadContainer = () => {
     };
 
     const onThreadSubmit = (newThread) => {
-        addThread(newThread)
+        addThread(newThread);
     };
 
     const addThread = (newThread) => {
         const updatedThreads =[...threads, newThread];
         setThreads(updatedThreads);
-    }
+    };
 
     return(
         <div className='Container'>
@@ -53,7 +53,8 @@ const ThreadContainer = () => {
 
             {<ThreadList threads={threads} selectedThread={selectedThread}/>}
 
-            {viewThread ? <Thread viewThread={viewThread}/> : null}
+            {viewThread ? <Thread viewThread={viewThread} /> : null}
+
         </div>
     );
 }

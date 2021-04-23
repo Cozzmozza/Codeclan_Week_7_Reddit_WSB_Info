@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 
 const NewThread = ({onThreadSubmit}) => {
 
-    const [title, setTitle] = useState(null);
-    const [selftext, setSelftext] = useState(null);
+    const [title, setTitle] = useState('');
+    const [selftext, setSelftext] = useState('');
 
     const handleTitleChange = (evt) => {
         setTitle(evt.target.value)
@@ -17,13 +17,20 @@ const NewThread = ({onThreadSubmit}) => {
         evt.preventDefault();
         const titleToSubmit = title.trim();
         const textToSubmit = selftext.trim();
-        if (!titleToSubmit || textToSubmit){
+        if (!titleToSubmit || !textToSubmit){
             return
         }
+
         onThreadSubmit(
-            {title: titleToSubmit},
-            {selftext: textToSubmit}
+            {'data' :  {title: titleToSubmit,
+                selftext: textToSubmit}
+            }
         )
+        console.log(titleToSubmit);
+        console.log(textToSubmit);
+
+        setTitle('');
+        setSelftext('');
 
     }
 

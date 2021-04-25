@@ -1,0 +1,23 @@
+.list-container{
+    width: 30%;
+}
+
+.list-container > ul {
+    list-style: none;
+    text-align: left;
+}
+
+.list-container > ul > li {
+    background-color: rgb(171, 212, 209);
+    padding: 10px;
+    border: 1px solid grey;
+}
+.list-container > ul > li > h3{
+    white-space: pre-wrap;
+    overflow:auto;
+    text-overflow: ellipsis;
+}
+
+.list-container > ul > li:nth-child(odd) {
+    background-color: rgb(208, 250, 251)
+}

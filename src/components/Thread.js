@@ -8,7 +8,7 @@ const Thread = ({viewThread}) => {
     const thread = viewThread.data
 
     return(
-        <div>
+        <div className='thread'>
             <h1>{thread.title}</h1>
             <p>{thread.selftext}</p>
         </div>

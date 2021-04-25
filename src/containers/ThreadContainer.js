@@ -32,9 +32,15 @@ const ThreadContainer = () => {
     };
 
     const handleNewThreadForm = () => {
+        // If statement is in place due to an error we had
+        // If I clicked add new thread before threads had populated, it was taking in threads = [] and appending our one item to it
+        // Now if I load the page and click add new thread, it doesn't do anything, till threads is loaded
+        if (threads.length > 0){
         return(
             setNewThreadForm(<NewThread onThreadSubmit={onThreadSubmit}/>)
-        );
+        )}
+        else return
+
     };
 
     const onThreadSubmit = (newThread) => {
@@ -52,17 +58,19 @@ const ThreadContainer = () => {
     return(
         <div className='main-container'>
             <header>
-                <h1>I am a container Heading</h1>
-                <p>This is all my text!</p>
+                <h1>Reddit/WallStreetBets (WSB)</h1>
+                <p>This directory on Reddit lists all the active threads in Subreddit, wallstreetbets. This is currently a highly popular subreddit, with a range of amateur and professional investors who share analysis of stocks. </p>
+                <p>The Subreddit has made international news multiple times recently, as billionaire Hedgefunds (and managers) who have lost money, have attacked their methodology.</p>
+                <button onClick={handleNewThreadForm}>Add New Thread</button>
             </header>
-
-            <button onClick={handleNewThreadForm}>Add New Thread</button>
 
             {viewNewThreadForm}
 
-            {<ThreadList threads={threads} selectedThread={selectedThread}/>}
+            <body>
+                {<ThreadList threads={threads} selectedThread={selectedThread}/>}
 
-            {viewThread ? <Thread viewThread={viewThread} /> : null}
+                {viewThread ? <Thread viewThread={viewThread} /> : null}    
+            </body>
 
         </div>
     );

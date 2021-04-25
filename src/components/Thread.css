@@ -2,4 +2,12 @@
     margin-left: 3%;
     text-align: left;
     align-content: center;
+    max-width: 60%;
+}
+
+
+
+img {
+    max-width: 50%;
+    max-height: 50%;
 }

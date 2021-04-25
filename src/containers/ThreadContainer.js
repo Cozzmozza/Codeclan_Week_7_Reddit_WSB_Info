@@ -59,8 +59,11 @@ const ThreadContainer = () => {
         <div className='main-container'>
             <header>
                 <h1>Reddit/WallStreetBets (WSB)</h1>
-                <p>This directory on Reddit lists all the active threads in Subreddit, wallstreetbets. This is currently a highly popular subreddit, with a range of amateur and professional investors who share analysis of stocks. </p>
-                <p>The Subreddit has made international news multiple times recently, as billionaire Hedgefunds (and managers) who have lost money, have attacked their methodology.</p>
+                <p>This directory pulls live threads from Reddit, in a Subreddit called WallSreetBets (WSB). This is currently a highly popular Sub, with a range of amateur and professional investors who share analysis of stocks. </p>
+                <p>WSB has made international news multiple times recently, as billionaire Hedgefund managers and Redditors have appeared in court justifying their actions.</p>
+                <p>The WSB Subreddit has reports of small time investors going all in on stocks that Hedgefunds were 'shorting', resulting in not only saving the company being shorted (saving it from liquidation or collapse), but with these small time investors paying off their tuition, family medical bills, mortgages, debt, and donating substantial amounts to charities. </p>
+                <p>There are also growing reports of stock market manipulation and suspicious circumstances from the real Wall Street traders and Hedgefund managers, although the court cases and investigations continue.  </p>
+                <h3>This page shows a small sample of the kind of posts that have led to these interntional news events...</h3>
                 <button onClick={handleNewThreadForm}>Add New Thread</button>
             </header>
 

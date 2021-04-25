@@ -1,4 +1,5 @@
 import React from 'react';
+import './ThreadList.css';
 
 const ThreadList = ({threads, selectedThread}) => {
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import './Thread.css';
 
 const Thread = ({viewThread}) => {
 

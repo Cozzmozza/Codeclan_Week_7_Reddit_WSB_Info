@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import ThreadList from '../components/ThreadList'
 import Thread from '../components/Thread';
 import NewThread from '../components/NewThread';
+import './ThreadContainer.css';
 
 const ThreadContainer = () => {
 
@@ -43,12 +44,20 @@ const ThreadContainer = () => {
     const addThread = (newThread) => {
         const updatedThreads =[...threads, newThread];
         setThreads(updatedThreads);
+        
+        // Set the form to null, so it does not render in our html
+        setNewThreadForm(null);
     };
 
     return(
-        <div className='Container'>
-            <h1>I am a container</h1>
+        <div className='main-container'>
+            <header>
+                <h1>I am a container Heading</h1>
+                <p>This is all my text!</p>
+            </header>
+
             <button onClick={handleNewThreadForm}>Add New Thread</button>
+
             {viewNewThreadForm}
 
             {<ThreadList threads={threads} selectedThread={selectedThread}/>}

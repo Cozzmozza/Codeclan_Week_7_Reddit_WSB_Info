@@ -1,0 +1,39 @@
+.new-thread {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.new-thread > form {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.new-thread > form > textarea{
+    margin-top: 15px;
+    padding: 5px;
+}
+
+.new-thread > form > label{
+    margin-top: 30px;
+}
+
+#title{
+    width: 50%;
+    height: 30px;
+    min-width: 100px;
+}
+
+#text{
+    width: 80%;
+    height: 300px;
+    min-width: 150px;
+}
+
+#submit-form{
+    margin-top: 50px;
+    border: 2px solid green;
+    background-color: rgb(170, 211, 156);
+}

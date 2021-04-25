@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './NewThread.css';
 
 const NewThread = ({onThreadSubmit}) => {
 
@@ -41,14 +42,16 @@ const NewThread = ({onThreadSubmit}) => {
     }
 
     return(
-        <div>
+        <div class='new-thread'>
             <h2>Make a New Thread</h2>
             <h4>There are many threads out there. But this one is yours. What do you want to share with the community?</h4>
 
             <form onSubmit={handleThreadSubmit}>
-                <input  type='text' value={title} placeholder='Choose a summarising title' onChange={handleTitleChange}/>
-                <input  type='text' value={selftext} placeholder='And all your content here!' onChange={handleSelftextChange}/>
-                <input  type='submit' value='Post New Thread'/>
+                <label for="#title">Choose a summarising and catchy thread title</label>
+                <textarea id='title' type='text' value={title} placeholder='Hey, everyone! This is a summary!' onChange={handleTitleChange} />
+                <label for="#text">And all your content in here!</label>
+                <textarea id='text' type='text' value={selftext} placeholder='On this day, I found..' onChange={handleSelftextChange}/>
+                <input id='submit-form' type='submit' value='Post New Thread'/>
             </form>
         </div>
     )

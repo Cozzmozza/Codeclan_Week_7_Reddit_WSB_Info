@@ -17,7 +17,7 @@ const ThreadList = ({threads, selectedThread}) => {
     });
 
     return(
-        <div class='list-container'> 
+        <div className='list-container'> 
             <ul>
                 {allThreads}
             </ul>

@@ -15,7 +15,7 @@
     border-bottom: 3px dotted black;
 }
 
-.main-container > body{
+.main-container > main{
     display: flex;
     flex-direction: row;
 }

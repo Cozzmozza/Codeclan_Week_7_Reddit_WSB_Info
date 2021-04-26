@@ -63,8 +63,8 @@ const ThreadContainer = () => {
 
     const selectedThread = (thread) => {
         setViewThread(thread);
-        const threadUrl = `https://reddit.com/${thread.data.permalink}`; //Good, and the link.json is good
-        console.log(threadUrl) // good
+        //const threadUrl = `https://reddit.com/${thread.data.permalink}`; //Good, and the link.json is good
+        // console.log(threadUrl) // good
         // getComments(threadUrl); // BAD:
         // Access.... has been blocked by CORS policy: No 'Access-Control-Allow-Origin'
     };

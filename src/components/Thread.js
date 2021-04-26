@@ -16,33 +16,36 @@ const Thread = ({viewThread, threadComments}) => {
     // const commentsLength = threadComments.length
     // Not using the above at the moment
 
-    // This is to check if there is an image, and render it. If not, don't - because otherwise get the img alt every time
-    const image = () => {
+    // I want this function to check what media is attached.
+    // If there is an image, render it, if not, don't
+    // Likewise for videos
+    // Also display any external html links
+    const media = () => {
         const source = thread.url_overridden_by_dest;
-        if (source !== null){
-           return <img src={source} alt='Original poster meme or graph'></img>
-        }
-        // return source  != null ? <img src={source} alt='Original poster meme or graph'></img> : null;
-        // This is returning the image every time, because every post has an url_overridden_by_dest
-
-        // Only some are actually images, some just link to the page
-
-        // e.g. with image:  https://i.redd.it/1v0qru8jp7v61.jpg
-        // with video:  https://v.redd.it/rs9abwsl7ev61
-        // with attached html: "https://uk.finance.yahoo.com/news/hedge-fund-ipm-shuts-doors-083319437.html"
+        if (source){ // If there is a source linked to it
+            if (source[8] === 'i'){ // If the source is an image
+                return <img src={source} alt='Original poster meme or graph'></img>
+            }
+            else if (source[8] === 'v'){ // If the source is a video. Could also use the API "is_video = true"
+                // return <video src={thread.secure_media.reddit_video.fallback_url} type='video/mp4' alt='Original poster video'></video>
+                return <a href={thread.secure_media.reddit_video.fallback_url}>Click to view attached video</a>
+            }
         
-        // Need to find a way to check what file type it is, and render it, so we can show videos etc
+
+        // e.g. with image:  https://i.redd.it/1v0qru8jp7v61.jpg --> 'image is 'i', index 8
+        // with video:  https://v.redd.it/rs9abwsl7ev61 --> video is 'v', index 8
+        // with attached html: "https://uk.finance.yahoo.com/news/hedge-fund-ipm-shuts-doors-083319437.html"
+        } 
     }
 
     return(
         <div className='thread'>
             <h1>{thread.title}</h1>
             <h3><i>Author:</i> {thread.author}</h3>
-            <h4>Number of Awards: {numAwards}</h4>
+            <h4><i>Number of Awards:</i> {numAwards}</h4>
             <p>{thread.selftext}</p>
             <div className='thread-image'>
-                {/* <img src={thread.url_overridden_by_dest} alt='Original poster meme or graph'></img> */}
-                {image()}
+                {media()}
 
             </div>
             <h4>

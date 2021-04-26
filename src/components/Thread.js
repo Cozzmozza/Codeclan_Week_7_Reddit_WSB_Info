@@ -27,8 +27,8 @@ const Thread = ({viewThread, threadComments}) => {
                 return <img src={source} alt='Original poster meme or graph'></img>
             }
             else if (source[8] === 'v'){ // If the source is a video. Could also use the API "is_video = true"
-                // return <video src={thread.secure_media.reddit_video.fallback_url} type='video/mp4' alt='Original poster video'></video>
-                return <a href={thread.secure_media.reddit_video.fallback_url}>Click to view attached video</a>
+                return <iframe src={thread.secure_media.reddit_video.fallback_url} type='video/mp4' alt='Original poster video'></iframe>
+                // return <a href={thread.secure_media.reddit_video.fallback_url}>Click to view attached video</a>
             }
         
 
